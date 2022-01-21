@@ -16,10 +16,8 @@ export default function Form() {
 
   useEffect(() => {
     actions.getAllCountriesList();
-    console.log(process.env.API_KEY)
+    
   }, []);
-
-  console.log(store.countries);
 
   const handleChange = (e: any) => {
     setUserAnswer({...userAnswer, [e.target.name]: e.target.value})
