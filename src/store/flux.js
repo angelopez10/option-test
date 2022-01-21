@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       getAllKeywordNews: (item) => {
         try {
           axios
-            .get(`https://newsapi.org/v2/top-headlines?q=${item.keyword}&from=${item.startDate}&to=${item.endDate}&apiKey=${process.env.API_KEY}`)
+            .get(`https://newsapi.org/v2/top-headlines?q=${item.keyword}&from=${item.startDate}&to=${item.endDate}&apiKey=${process.env.REACT_APP_API_KEY}`)
             .then((res) => {
               
                 
@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       getAllCountryNews: (item) => {
         try {
           axios
-            .get(`https://newsapi.org/v2/top-headlines?country=${item.country}&from=${item.startDate}&to=${item.endDate}&apiKey=${process.env.API_KEY}`)
+            .get(`https://newsapi.org/v2/top-headlines?country=${item.country}&from=${item.startDate}&to=${item.endDate}&apiKey=${process.env.REACT_APP_API_KEY}`)
             .then((res) => {
               setStore({ countryNews: res.data.articles });
             });
